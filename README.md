@@ -74,5 +74,5 @@ Follow these steps to run TermsGuard AI locally on your machine.
 ---
 
 <div align="center">
-  <p>Built with ❤️ and Gemini AI</p>
+  <p>Built by Sanjeev</p>
 </div>
