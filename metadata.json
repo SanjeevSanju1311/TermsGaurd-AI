@@ -1,0 +1,5 @@
+{
+  "name": "TermsGuard AI",
+  "description": "AI-powered Terms and Conditions analyzer that highlights red flags and provides a safety score.",
+  "requestFramePermissions": []
+}
