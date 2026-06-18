@@ -522,7 +522,7 @@ export default function Analyzer() {
       }, 100);
     } catch (err) {
       console.error(err);
-      setError('Failed to analyze. Please ensure your text is valid Terms & Conditions or wait a moment before trying again.');
+      setError(err.message || 'Failed to analyze. Please ensure your text is valid Terms & Conditions or wait a moment before trying again.');
     } finally {
       setIsAnalyzing(false);
     }

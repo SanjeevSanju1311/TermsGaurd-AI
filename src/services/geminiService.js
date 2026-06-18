@@ -1,13 +1,13 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || "" });
 
 export async function analyzeTerms(text) {
   // Truncate to limit payload size and improve token generation speed dramatically
   const truncatedText = text.slice(0, 35000);
 
   const response = await ai.models.generateContent({
-    model: "gemini-3.5-flash",
+    model: "gemini-2.5-flash",
     contents: `Analyze the following Terms and Conditions text. Provide a safety score from 0 to 100 (where 100 is perfectly safe). Identify specific 'Red Flags' (negative things like data selling, hidden fees, etc.). Categorize findings into 'Privacy', 'Data Usage', 'Legal', and 'Other'. Provide a concise summary.
 
     CRITICAL SPEED & CONCISENESS RULES:
@@ -103,7 +103,7 @@ If the answer cannot be found or reasonably inferred from the terms, say: "Based
   });
 
   const response = await ai.models.generateContent({
-    model: "gemini-3.5-flash",
+    model: "gemini-2.5-flash",
     contents,
     config: {
       systemInstruction,
